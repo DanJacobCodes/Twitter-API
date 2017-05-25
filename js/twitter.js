@@ -1,5 +1,6 @@
 var Twit = require('twit');
 
+//API signup generated key
 var T = new Twit({
   consumer_key:         'LDjKxTYc1nW7oZkBtifDBzNLa',
   consumer_secret:      'EKwJmx1uDZCFoADfQWkRkX4TOnsUMl7Esd3TZytijpPiNcxMma',
@@ -9,12 +10,13 @@ var T = new Twit({
 });
 
 
-// T.get('search/tweets', { q: 'seahawks', count: 3 }, function(err, data, response) {
-//   var tweets = data.statuses;
-//   for (var i = 0; i < tweets.length; i++){
-//     console.log(tweets[i].text);
-//   }
-// });
+//Searches tweets and pulls tweets with keywords q:, count: retrieves 3 tweets"
+T.get('search/tweets', { q: 'seahawks', count: 3 }, function(err, data, response) {
+  var tweets = data.statuses;
+  for (var i = 0; i < tweets.length; i++){
+    console.log(tweets[i].text);
+  }
+});
 
 
 
